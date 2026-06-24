@@ -10,3 +10,6 @@
 
 # Exclude python runtime generated files
 *__pycache__/
+
+# Exclude test generated files
+test-dir/
