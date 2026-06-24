@@ -33,8 +33,4 @@ jobs:
 
       - name: run unit-tests
         run: |
-          mkdir test-dir
-          cd test-dir
-          cmake ../test
-          make
-          ctest -V
+          just test
