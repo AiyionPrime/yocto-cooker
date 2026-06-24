@@ -21,6 +21,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: setup git
+        run: |
+          git config --global init.defaultBranch master
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+
       - name: install requirements
         run: |
           sudo pip3 install .
@@ -30,8 +36,5 @@ jobs:
           mkdir test-dir
           cd test-dir
           cmake ../test
-          git config --global init.defaultBranch master
-          git config --global user.email "you@example.com"
-          git config --global user.name "Your Name"
           make
           ctest -V
